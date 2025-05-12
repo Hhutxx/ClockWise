@@ -1,0 +1,65 @@
+@import './base.css';
+
+#app {
+  margin: 0 auto;
+}
+
+.container {
+  display: flex;
+  max-width: 100%;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1170px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1350px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .container {
+    max-width: 1520px;
+  }
+}
+
+body {
+  margin: 0;
+}
+
+* {
+  font-family: var(--font-family);
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  font-size: 18px;
+  color: var(--bg-black);
+}
+
+@media (min-width: 768px) {
+  * {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 1200px) {
+  * {
+    font-size: 24px;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: var(--bg-black);
+  transition: color 0.3s ease;
+  &:hover {
+    color: #8e8e8e;
+  }
+}
