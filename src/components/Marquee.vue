@@ -36,7 +36,7 @@
 <style scoped lang="scss">
 .marquee-container {
   width: 100%;
-  background-color: rgba(200, 200, 200, 0.5); // светло-серый фон с прозрачностью
+  background-color: rgba(200, 200, 200, 0.5); 
   overflow: hidden;
   padding: 30px 0 25px 0;
 }
@@ -72,7 +72,7 @@
   }
 }
 
-/* Адаптивность для экранов до 1600px */
+
 @media (max-width: 1600px) {
   .marquee {
     width: 80%;
@@ -92,7 +92,7 @@
   }
 }
 
-/* Адаптивность для экранов до 1200px */
+
 @media (max-width: 1200px) {
   .marquee {
     width: 70%;
@@ -112,7 +112,7 @@
   }
 }
 
-/* Адаптивность для экранов до 900px */
+
 @media (max-width: 900px) {
   .marquee {
     width: 90%;
@@ -132,7 +132,7 @@
   }
 }
 
-/* Адаптивность для экранов до 600px */
+
 @media (max-width: 600px) {
   .marquee {
     width: 100%;

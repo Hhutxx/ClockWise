@@ -40,8 +40,8 @@
     overflow: hidden;
   
     @media (max-width: 768px) {
-      height: 26.5vh;  /* Сделаем высоту контейнера на мобилках максимальной */
-      padding: 0;     /* Убираем отступы */
+      height: 26.5vh;  
+      padding: 0;     
     }
   
     @supports (-webkit-touch-callout: none) {
@@ -52,7 +52,7 @@
   .banner-video {
     width: 100%;
     height: 100%;
-    object-fit: contain; /* На мобильных устройствах видео не будет обрезаться */
+    object-fit: contain; 
     position: absolute;
     top: 0;
     left: 0;
@@ -76,7 +76,7 @@
     text-align: center;
     font-family: serif;
     font-weight: bold;
-    font-size: clamp(24px, 6vw, 64px); /* Адаптивный размер текста */
+    font-size: clamp(24px, 6vw, 64px); 
     padding: 0 20px;
     opacity: 0.7;
   }

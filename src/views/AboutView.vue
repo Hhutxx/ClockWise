@@ -33,11 +33,11 @@
 .about {
   min-height: 100vh;
   padding: 10px 0;
-  background-color: rgba(200, 200, 200, 0.5); // светло-серый фон с прозрачностью
+  background-color: rgba(200, 200, 200, 0.5); 
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  color: #fff;  /* Белый текст, если фон тёмный */
+  color: #fff;  
 }
 
 .about-container {
@@ -49,9 +49,9 @@
   margin-top: 5px;
   line-height: 1.6;
 
-  /* Заголовки */
+
   h1 {
-    font-size: 16px; /* Уменьшаем размер шрифта */
+    font-size: 16px; 
     margin-bottom: 20px;
     font-weight: 600;
 
@@ -69,7 +69,7 @@
   }
 
   h2 {
-    font-size: 14px; /* Уменьшаем размер шрифта */
+    font-size: 14px; 
     margin: 30px 0 15px;
     font-weight: 500;
 
@@ -86,10 +86,10 @@
     }
   }
 
-  /* Параграфы */
+
   p {
     margin-bottom: 20px;
-    font-size: 12px; /* Уменьшаем размер шрифта */
+    font-size: 12px; 
 
     @media (min-width: 576px) {
       font-size: 14px;
@@ -111,7 +111,7 @@
 
     li {
       margin-bottom: 10px;
-      font-size: 12px; /* Уменьшаем размер шрифта */
+      font-size: 12px; 
 
       @media (min-width: 576px) {
         font-size: 14px;
@@ -130,7 +130,7 @@
   .contacts {
     list-style-type: none;
     padding-left: 5px;
-    font-size: 12px; /* Уменьшаем размер шрифта */
+    font-size: 12px; 
 
     @media (min-width: 576px) {
       font-size: 14px;
@@ -146,7 +146,7 @@
   }
 
   .motto {
-    font-size: 14px; /* Уменьшаем размер шрифта */
+    font-size: 14px; 
     font-weight: 500;
     margin-top: 30px;
 

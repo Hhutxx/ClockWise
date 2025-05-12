@@ -20,10 +20,10 @@ import { products } from '../composables/products'
 <style scoped lang="scss">
 .catalog-list {
   width: 100%;
-  background-color: rgba(200, 200, 200, 0.5); // светло-серый фон с прозрачностью
-  padding: 30px 20px 40px; // одинаковый верхний отступ, как в .about
+  background-color: rgba(200, 200, 200, 0.5); 
+  padding: 30px 20px 40px; 
   box-sizing: border-box;
-  overflow-x: hidden; // Скрытие горизонтальной прокрутки
+  overflow-x: hidden; 
 }
 
 .catalog-title {
@@ -47,20 +47,20 @@ import { products } from '../composables/products'
 .catalog-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 30px; /* Расстояние между товарами */
+  gap: 30px; 
   justify-content: center;
   padding: 0 15px;
-  margin: 0 auto; /* Центрирование контейнера */
+  margin: 0 auto; 
   box-sizing: border-box;
   overflow: hidden;
 
   @media (max-width: 767px) {
-    gap: 20px; /* Меньше расстояние на мобильных */
-    flex-direction: row; /* Выравнивание в 3 колонки */
+    gap: 20px; 
+    flex-direction: row; 
   }
 
   @media (max-width: 575px) {
-    gap: 10px; /* Еще меньше расстояние на маленьких экранах */
+    gap: 10px; 
   }
 }
 </style>

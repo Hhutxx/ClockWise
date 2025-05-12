@@ -27,7 +27,7 @@
       </div>
     </div>
 
-    <!-- Модальное окно оформления заказа -->
+
     <div v-if="showOrderModal" class="modal-overlay" @click="showOrderModal = false">
       <div class="modal-content" @click.stop>
         <div class="modal-header">
@@ -270,7 +270,7 @@ const finishOrder = () => {
   }
 }
 
-/* Стили модального окна */
+
 .modal-overlay {
   position: fixed;
   top: 0;

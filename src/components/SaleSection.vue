@@ -11,7 +11,7 @@
                     <p class="sale-date">1 Июня - 10 Июля 2025</p>
                 </div>
                 <div class="sale-button">
-                    <a href="/ClockWise/catalog">За покупками</a> <!-- Переход на страницу каталога -->
+                    <a href="/ClockWise/catalog">За покупками</a> 
                 </div>
             </div>
         </div>
@@ -23,7 +23,7 @@
 
 <style scoped lang="scss">
 .sale-section {
-    background-color: rgba(200, 200, 200, 0.5); // светло-серый фон с прозрачностью
+    background-color: rgba(200, 200, 200, 0.5); 
     width: 100%;
     min-height: 0;
 }
@@ -84,23 +84,23 @@
     letter-spacing: 0.02em;
     color: #fff;
     background: #000;
-    width: 35vw; /* Сделал кнопку меньше */
-    max-width: 180px; /* Максимальная ширина кнопки */
+    width: 35vw; 
+    max-width: 180px; 
     min-width: 90px;
-    height: 5vw; /* Сделал кнопку меньше */
-    max-height: 40px; /* Максимальная высота кнопки */
+    height: 5vw; 
+    max-height: 40px; 
     min-height: 30px;
     transition: all 0.3s ease;
     border: none;
 
-    font-size: 0.8rem; /* Меньше текст */
+    font-size: 0.8rem; 
     text-align: center;
-    line-height: 40px; /* Центрируем текст по вертикали */
+    line-height: 40px; 
 
     &:hover {
-        background: transparent; /* Прозрачный фон при наведении */
-        color: #000; /* Черный текст */
-        border: 1px solid #000; /* Черная рамка */
+        background: transparent; 
+        color: #000; 
+        border: 1px solid #000; 
         cursor: pointer;
     }
 }
@@ -109,7 +109,7 @@ p {
     margin: 0;
 }
 
-/* Адаптивность для экранов до 900px */
+
 @media (max-width: 900px) {
     .sale-container {
         flex-direction: column;
@@ -133,7 +133,7 @@ p {
     }
 }
 
-/* Адаптивность для экранов до 600px */
+
 @media (max-width: 600px) {
     .sale-container {
         padding: 3vw 1vw;

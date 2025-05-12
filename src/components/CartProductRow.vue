@@ -28,10 +28,10 @@ defineProps<{
 defineEmits(['increment', 'decrement', 'remove'])
 
 function formatPrice(price: number|string|undefined, qty: number|undefined): string {
-  // Если price это строка с пробелами (например "44 290"), извлекаем только числа
+ 
   let p = 0
   if (typeof price === 'string') {
-    // Удаляем все пробелы и парсим как число
+   
     p = parseFloat(price.replace(/\s+/g, ''))
   } else {
     p = Number(price)
@@ -40,7 +40,7 @@ function formatPrice(price: number|string|undefined, qty: number|undefined): str
   const q = Number(qty)
   if (isNaN(p) || isNaN(q)) return '0'
   
-  // Форматируем с разделителем тысяч (пробел)
+  
   return (p * q).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ')
 }
 </script>

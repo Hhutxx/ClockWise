@@ -35,7 +35,6 @@
     </div>
     <div v-else style="padding: 40px; font-size: 24px; color: #000">Товар не найден</div>
     
-    <!-- Модальное окно подтверждения добавления в корзину -->
     <div v-if="showAddedToCartModal" class="modal-overlay" @click="closeModal">
       <div class="modal-content" @click.stop>
         <div class="modal-header">

@@ -37,14 +37,14 @@ const navigateTo = (path: string) => {
   margin-bottom: 16px;
   box-sizing: border-box;
   transition: box-shadow 0.3s, transform 0.3s;
-  border-radius: 0;  /* Убираем скругления */
+  border-radius: 0;  
 
   @media (max-width: 768px) {
-    max-width: 160px; /* Меньше карточки на мобильных устройствах */
+    max-width: 160px; 
   }
 
   @media (max-width: 576px) {
-    max-width: 140px; /* Еще меньше карточки на маленьких экранах */
+    max-width: 140px; 
   }
 
   &:hover {
@@ -63,11 +63,11 @@ const navigateTo = (path: string) => {
   background: #fff;
   
   @media (max-width: 768px) {
-    height: 200px; /* Меньше изображение на мобильных */
+    height: 200px; 
   }
 
   @media (max-width: 576px) {
-    height: 180px; /* Еще меньше изображение на маленьких экранах */
+    height: 180px; 
   }
 }
 
@@ -85,11 +85,11 @@ const navigateTo = (path: string) => {
   padding: 0 10px;
 
   @media (max-width: 768px) {
-    font-size: 14px; /* Меньше размер текста на мобильных */
+    font-size: 14px; 
   }
 
   @media (max-width: 576px) {
-    font-size: 12px; /* Еще меньше текст на маленьких экранах */
+    font-size: 12px; 
   }
 }
 
@@ -101,11 +101,11 @@ const navigateTo = (path: string) => {
   text-align: center;
 
   @media (max-width: 768px) {
-    font-size: 16px; /* Меньше цена на мобильных */
+    font-size: 16px; 
   }
 
   @media (max-width: 576px) {
-    font-size: 14px; /* Еще меньше цена на маленьких экранах */
+    font-size: 14px; 
   }
 }
 
@@ -116,11 +116,11 @@ const navigateTo = (path: string) => {
   text-align: center;
 
   @media (max-width: 768px) {
-    font-size: 12px; /* Меньше размер текста для бренда на мобильных */
+    font-size: 12px; 
   }
 
   @media (max-width: 576px) {
-    font-size: 10px; /* Еще меньше текст для бренда на маленьких экранах */
+    font-size: 10px; 
   }
 }
 </style>

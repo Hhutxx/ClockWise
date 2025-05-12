@@ -36,7 +36,7 @@ function logout() {
   padding: 20px 15px;
   max-width: 400px;
   margin: 40px auto;
-  border-radius: 0;  /* Убираем скругление */
+  border-radius: 0;  
 
   @media (max-width: 576px) {
     padding: 15px 10px;
@@ -45,7 +45,7 @@ function logout() {
 }
 
 .profile-title {
-  font-size: 16px; /* Устанавливаем размер текста как в авторизации */
+  font-size: 16px; 
   font-weight: 600;
   color: #000;
   margin-bottom: 16px;
@@ -70,7 +70,7 @@ function logout() {
 }
 
 .profile-row {
-  font-size: 16px; /* Устанавливаем размер текста как в авторизации */
+  font-size: 16px; 
   color: #000;
 
   @media (min-width: 576px) {
@@ -89,10 +89,10 @@ function logout() {
 .profile-logout {
   width: 100%;
   max-width: 180px;
-  height: 36px;  /* Уменьшаем высоту кнопки для мобильных */
+  height: 36px;  
   background: #000;
   color: #fff;
-  font-size: 14px; /* Тот же размер шрифта, что и в авторизации */
+  font-size: 14px; 
   border: none;
   margin-top: 20px;
   margin-left: auto;
@@ -101,8 +101,8 @@ function logout() {
 
   @media (max-width: 576px) {
     font-size: 14px;
-    height: 36px;  /* Меньше высота кнопки на мобильных */
-    padding: 10px;  /* Добавляем отступы для кнопки */
+    height: 36px;  
+    padding: 10px;  
   }
 
   @media (min-width: 576px) {
@@ -128,7 +128,7 @@ function logout() {
 }
 
 .profile-empty {
-  font-size: 16px; /* Устанавливаем размер текста как в авторизации */
+  font-size: 16px; 
   color: #888;
 
   @media (min-width: 576px) {

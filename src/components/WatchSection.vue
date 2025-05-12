@@ -28,7 +28,7 @@ import Watch from './Watch.vue'
 <style scoped lang="scss">
 .watch-section {
   width: 100%;
-  background-color: rgba(200, 200, 200, 0.5); // светло-серый фон с прозрачностью
+  background-color: rgba(200, 200, 200, 0.5); 
   padding: 2vw 3vw;
   box-sizing: border-box;
 }
@@ -53,7 +53,7 @@ import Watch from './Watch.vue'
   margin-top: 1.5vw;
 }
 
-/* Стиль для каждого элемента */
+
 .watch-card {
   display: flex;
   flex-direction: column;
@@ -65,7 +65,7 @@ import Watch from './Watch.vue'
   margin: 0 auto;
 }
 
-/* Контейнер для изображений */
+
 .watch-image-container {
   width: 100%;
   height: auto;
@@ -73,63 +73,63 @@ import Watch from './Watch.vue'
   justify-content: center;
 }
 
-/* Изображение */
+
 .watch-image {
   width: 100%;
   height: auto;
   object-fit: contain;
-  max-width: 180px; /* Уменьшаем максимальную ширину изображений */
+  max-width: 180px; 
 }
 
-/* Уменьшаем размер текста брендов */
+
 .watch-brand {
-  font-size: clamp(0.5rem, 1.2vw, 0.7rem); /* Уменьшаем размер текста для брендов */
+  font-size: clamp(0.5rem, 1.2vw, 0.7rem); 
   font-weight: 500;
   text-align: center;
-  color: #333; /* Цвет бренда */
+  color: #333; 
 }
 
-/* Для экранов с максимальной шириной 600px */
+
 @media (max-width: 600px) {
   .watches-container {
-    display: flex; /* Оставляем flex для одного ряда */
-    justify-content: space-between; /* Размещаем карточки с отступами */
-    flex-wrap: nowrap; /* Убираем перенос элементов */
+    display: flex; 
+    justify-content: space-between; 
+    flex-wrap: nowrap; 
   }
 
   .watch-card {
-    flex: 0 0 30%; /* Устанавливаем карточки в 1 ряд */
-    max-width: 100%; /* Задаем максимальную ширину */
+    flex: 0 0 30%; 
+    max-width: 100%; 
   }
 
   .watch-image {
-    max-width: 80px; /* Уменьшаем максимальную ширину изображений */
+    max-width: 80px; 
   }
 
   .watch-brand {
-    font-size: clamp(0.4rem, 3vw, 0.6rem); /* Уменьшаем размер текста на мобильных */
+    font-size: clamp(0.4rem, 3vw, 0.6rem); 
   }
 }
 
-/* Для экранов от 600px до 900px */
+
 @media (max-width: 900px) {
   .watches-container {
     gap: 4vw;
   }
 
   .watch-card {
-    flex: 0 0 30%; /* Увеличиваем ширину карточки */
+    flex: 0 0 30%; 
   }
 
   .watch-brand {
-    font-size: clamp(0.5rem, 2vw, 0.7rem); /* Текст бренда меньше на этих устройствах */
+    font-size: clamp(0.5rem, 2vw, 0.7rem); 
   }
 }
 
-/* Для экранов от 900px до 1200px */
+
 @media (max-width: 1200px) {
   .watch-card {
-    flex: 0 0 22%; /* Уменьшаем карточки */
+    flex: 0 0 22%; 
     max-width: 240px;
   }
 
@@ -138,7 +138,7 @@ import Watch from './Watch.vue'
   }
 
   .watch-brand {
-    font-size: clamp(0.6rem, 1.8vw, 0.8rem); /* Уменьшаем текст бренда */
+    font-size: clamp(0.6rem, 1.8vw, 0.8rem); 
   }
 }
 

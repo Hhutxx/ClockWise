@@ -69,13 +69,13 @@ function onLogin() {
 <style scoped lang="scss">
 .login-bg {
   background-color: rgba(233, 233, 233, 0.5);
-  border-radius: 0;  // Убираем скругление
-  padding: 20px 15px;  // Уменьшаем отступы для мобильных устройств
+  border-radius: 0;  
+  padding: 20px 15px;  
   max-width: 400px;
   margin: 40px auto;
 
   @media (max-width: 576px) {
-    padding: 15px 10px;  // Еще меньше отступы для мобильных устройств
+    padding: 15px 10px;  
     max-width: 100%;
   }
 }
@@ -99,7 +99,7 @@ function onLogin() {
   }
 
   @media (max-width: 576px) {
-    font-size: 14px;  // Уменьшаем размер для мобильных устройств
+    font-size: 14px;  
   }
 }
 
@@ -123,17 +123,17 @@ function onLogin() {
   }
 
   @media (max-width: 576px) {
-    font-size: 12px;  // Уменьшаем размер для мобильных устройств
+    font-size: 12px;  
   }
 }
 
 .login-form {
   display: flex;
   flex-direction: column;
-  gap: 12px;  // Уменьшаем расстояние между полями для мобильных устройств
+  gap: 12px;  
 
   @media (max-width: 576px) {
-    gap: 8px;  // Еще меньше расстояние на мобильных устройствах
+    gap: 8px;  
   }
 }
 
@@ -161,7 +161,7 @@ function onLogin() {
   }
 
   @media (max-width: 576px) {
-    font-size: 12px;  // Уменьшаем размер шрифта для мобильных устройств
+    font-size: 12px;  
   }
 }
 
@@ -185,8 +185,8 @@ function onLogin() {
   }
 
   @media (max-width: 576px) {
-    font-size: 14px;  // Уменьшаем размер шрифта для мобильных устройств
-    padding: 8px 10px;  // Немного уменьшаем отступы
+    font-size: 14px;  
+    padding: 8px 10px;  
   }
 
   @media (min-width: 576px) {
@@ -204,11 +204,11 @@ function onLogin() {
 
 .login-btn {
   width: 100%;
-  max-width: 180px; /* Уменьшаем максимальную ширину кнопки */
-  height: 40px; /* Уменьшаем высоту кнопки */
+  max-width: 180px; 
+  height: 40px; 
   background: #000;
   color: #fff;
-  font-size: 14px; /* Уменьшаем размер шрифта */
+  font-size: 14px; 
   border: none;
   border-radius: 0;
   margin-top: 24px;
@@ -217,13 +217,13 @@ function onLogin() {
   transition: background 0.2s, color 0.2s;
 
   @media (max-width: 576px) {
-    font-size: 14px; /* Размер шрифта для мобильных */
-    height: 44px; /* Немного увеличиваем высоту для мобильных, чтобы было комфортно нажимать */
+    font-size: 14px; 
+    height: 44px; 
   }
 
   @media (min-width: 576px) {
     font-size: 16px;
-    height: 48px; /* Немного увеличиваем высоту на устройствах с большим экраном */
+    height: 48px; 
   }
 
   @media (min-width: 768px) {
@@ -248,7 +248,7 @@ function onLogin() {
   font-size: 12px;
 
   @media (max-width: 576px) {
-    font-size: 14px;  // Уменьшаем размер шрифта для мобильных устройств
+    font-size: 14px;  
   }
 
   @media (min-width: 576px) {
@@ -270,7 +270,7 @@ function onLogin() {
   margin-top: 4px;
 
   @media (max-width: 576px) {
-    font-size: 14px;  // Уменьшаем размер шрифта для мобильных
+    font-size: 14px;  
   }
 
   @media (min-width: 576px) {

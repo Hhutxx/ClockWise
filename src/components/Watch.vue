@@ -26,7 +26,7 @@ defineProps<{
   margin: 0 auto;
 }
 
-/* Контейнер изображений */
+
 .watch-image-container {
   width: 100%;
   height: auto;
@@ -34,7 +34,7 @@ defineProps<{
   justify-content: center;
 }
 
-/* Изображение */
+
 .watch-image {
   width: 100%;
   height: auto;
@@ -43,7 +43,7 @@ defineProps<{
 }
 
 .watch-brand {
-  font-size: clamp(0.8rem, 2vw, 1rem); /* Увеличили размер шрифта */
+  font-size: clamp(0.8rem, 2vw, 1rem); 
   font-weight: 500;
   text-align: center;
   color: #191919;

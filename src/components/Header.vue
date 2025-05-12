@@ -1,21 +1,21 @@
 <template>
   <header class="header">
     <div class="header-container container">
-      <!-- Логотип -->
+
       <div class="logo logo-container" @click="navigateTo('/')">
         <img src="../assets/logo.svg" alt="logo" />
       </div>
 
-      <!-- Бургер -->
+
       <div class="burger" :class="{ open: menuOpen }" @click="toggleMenu">
         <span></span>
         <span></span>
         <span></span>
       </div>
 
-      <!-- Меню -->
+
       <nav :class="['menu', { open: menuOpen }]">
-        <!-- Левая часть с навигацией -->
+
         <ul class="menu-left">
           <li>
             <a 
@@ -39,7 +39,7 @@
           </li>
         </ul>
 
-        <!-- Правая часть с иконками -->
+
         <div class="menu-right">
           <div class="cart" @click="navigateAndClose('/profile')">
             <img
@@ -209,7 +209,7 @@ const isActive = (path: string) => {
     margin: 0;
 
     @media (min-width: 768px) {
-      margin-left: 32px; // отступ между логотипом и "О нас"
+      margin-left: 32px; 
     }
   }
 

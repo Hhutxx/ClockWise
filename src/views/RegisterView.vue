@@ -124,7 +124,7 @@ function onRegister() {
 .register-bg {
   background-color: rgba(233, 233, 233, 0.5);
   border-radius: 0;
-  padding: 30px;  // Убрали верхний и нижний отступ
+  padding: 30px;  
   margin: auto auto;
 }
 
@@ -200,7 +200,7 @@ function onRegister() {
 .register-form {
   display: flex;
   flex-direction: column;
-  gap: 16px;  // Уменьшил расстояние между элементами
+  gap: 16px;  
 }
 
 .register-row {
@@ -239,10 +239,10 @@ function onRegister() {
 }
 
 .register-row input {
-  font-size: 14px;  // Уменьшил размер шрифта для ввода
-  padding: 8px 12px;  // Уменьшил внутренние отступы
+  font-size: 14px;  
+  padding: 8px 12px;  
   border: 2px solid #888;
-  border-radius: 6px;  // Сделал скругление чуть меньше
+  border-radius: 6px;  
   background: #fff;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 
