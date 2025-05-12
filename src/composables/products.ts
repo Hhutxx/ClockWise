@@ -1,7 +1,7 @@
 export const products = [
   {
     id: '1',
-    imageSrc: '/ClockWise/src/assets/армани(каталог).jpg',
+    imageSrc: 'https://raw.githubusercontent.com/Hhutxx/ClockWise/refs/heads/main/src/assets/армани(каталог).jpg',
     title: 'Emporio Armani AR2448',
     price: '44 290',
     description: 'Renato. Часы-хронограф с секундомером. 12-ти и 24-х часовой формат времени. Циферблат с метками в виде штрихов выполнен по технологии Sunray (солнечные лучи). Окошко даты находится между отметками 4 и 5 часов. Стальной браслет с раскладывающейся застежкой.',
@@ -17,7 +17,7 @@ export const products = [
       ['Календарь', 'число'],
       ['Габаритные размеры', 'D 43мм, ширина браслета 22мм, длина браслета 200мм'],
     ],
-    logoSrc: '/ClockWise/src/assets/catalog_logos/армани лого.png',
+    logoSrc: 'https://raw.githubusercontent.com/Hhutxx/ClockWise/refs/heads/main/src/assets/catalog_logos/армани%20лого.png',
   },
   {
     id: '2',
