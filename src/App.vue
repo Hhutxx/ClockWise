@@ -11,17 +11,17 @@ import Footer from './components/Footer.vue'
 </template>
 
 <style lang="scss">
-/* Устанавливаем только фон с изображением для всего приложения */
+
 body {
-  background-image: url('@/assets/фон6.jpg'); /* <-- путь к картинке фона */
-  background-size: cover; /* Фон будет растянут по всему экрану */
-  background-position: center; /* Центрирует изображение */
-  background-attachment: fixed; /* Фон будет фиксирован при прокрутке */
-  margin: 0; /* Убирает отступы */
-  height: 100%; /* Устанавливаем высоту для всего документа */
+  background-image: url('@/assets/фон6.jpg'); 
+  background-size: cover; 
+  background-position: center; 
+  background-attachment: fixed; 
+  margin: 0; 
+  height: 100%; 
 }
 
 html, body {
-  height: 100%; /* Устанавливаем высоту для html и body */
+  height: 100%; 
 }
 </style>

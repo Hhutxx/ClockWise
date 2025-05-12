@@ -23,10 +23,10 @@
       </div>
       <div class="cart-btn-row">
         <button class="cart-btn" @click="goToCatalog">В каталог</button>
-        <button v-if="cartProducts.length > 0" class="cart-btn cart-btn-order" @click="showOrderModal = true">Оформить заказ</button>
+        <button v-if="cartProducts.length > 0" class="cart-btn" @click="showOrderModal = true">Оформить заказ</button>
       </div>
     </div>
-    
+
     <!-- Модальное окно оформления заказа -->
     <div v-if="showOrderModal" class="modal-overlay" @click="showOrderModal = false">
       <div class="modal-content" @click.stop>
@@ -75,21 +75,17 @@ const remove = (id: string) => { removeFromCart(id); delete qtyMap[id] }
 
 const total = computed(() => {
   let sum = cartProducts.value.reduce((acc, p) => {
-    // Если price это строка с пробелами (например "44 290"), извлекаем только числа
     let price = 0
     if (typeof p.price === 'string') {
-      // Удаляем все пробелы и парсим как число
       price = parseFloat(p.price.replace(/\s+/g, ''))
     } else {
       price = Number(p.price)
     }
-    
     const qty = qtyMap[p.id] || 1
     if (isNaN(price)) return acc
     return acc + price * qty
   }, 0)
-  
-  // Форматируем с разделителем тысяч (пробел)
+
   return sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ')
 })
 
@@ -103,46 +99,46 @@ const finishOrder = () => {
 <style scoped lang="scss">
 .cart-bg {
   min-height: 100vh;
-  background-color: rgba(200, 200, 200, 0.5); // светло-серый фон с прозрачностью
+  background-color: rgba(200, 200, 200, 0.5);
   padding: 30px 15px;
   box-sizing: border-box;
-  
+
   @media (min-width: 768px) {
     padding: 50px 30px;
   }
-  
+
   @media (min-width: 992px) {
     padding: 80px 50px;
   }
 }
 
 .cart-title {
-  font-size: 16px; /* Совпадает с размером заголовка h1 в разделе о нас */
-  font-weight: 600; /* То же самое, что и у h1 в разделе о нас */
+  font-size: 16px;
+  font-weight: 600;
   color: #000;
-  margin-bottom: 20px; /* Снизу отступ, как у заголовков в разделе о нас */
-  
+  margin-bottom: 20px;
+
   @media (min-width: 576px) {
-    font-size: 18px; /* Адаптация для экранов от 576px */
+    font-size: 18px;
   }
 
   @media (min-width: 768px) {
-    font-size: 20px; /* Адаптация для экранов от 768px */
+    font-size: 20px;
   }
 
   @media (min-width: 992px) {
-    font-size: 24px; /* Адаптация для экранов от 992px */
+    font-size: 24px;
   }
 }
 
 .cart-content {
   width: 100%;
   margin: 0 auto;
-  
+
   @media (min-width: 992px) {
     max-width: 900px;
   }
-  
+
   @media (min-width: 1200px) {
     max-width: 1100px;
   }
@@ -157,13 +153,13 @@ const finishOrder = () => {
   flex-direction: column;
   box-sizing: border-box;
   margin-bottom: 20px;
-  
+
   @media (min-width: 768px) {
     padding: 30px 0;
     min-height: 250px;
     margin-bottom: 30px;
   }
-  
+
   @media (min-width: 992px) {
     padding: 40px 0;
     min-height: 300px;
@@ -172,15 +168,15 @@ const finishOrder = () => {
 }
 
 .cart-empty {
-  font-size: 16px; /* Уменьшено для согласования с авторизацией */
+  font-size: 16px;
   color: #000;
   margin-left: 20px;
-  
+
   @media (min-width: 768px) {
     font-size: 18px;
     margin-left: 30px;
   }
-  
+
   @media (min-width: 992px) {
     font-size: 20px;
     margin-left: 40px;
@@ -193,12 +189,12 @@ const finishOrder = () => {
   margin: 30px 0 0 0;
   padding: 15px 20px;
   border-top: 1px solid rgba(0, 0, 0, 0.5);
-  
+
   @media (min-width: 768px) {
     margin: 40px 0 0 0;
     padding: 20px 30px;
   }
-  
+
   @media (min-width: 992px) {
     margin: 50px 0 0 0;
     padding: 25px 40px;
@@ -208,13 +204,13 @@ const finishOrder = () => {
 .cart-total-label {
   color: #000;
   font-weight: 400;
-  font-size: 14px; /* Уменьшено */
+  font-size: 14px;
   margin-right: 20px;
-  
+
   @media (min-width: 768px) {
     font-size: 16px;
   }
-  
+
   @media (min-width: 992px) {
     font-size: 18px;
   }
@@ -223,12 +219,12 @@ const finishOrder = () => {
 .cart-total-value {
   color: #000;
   font-weight: 700;
-  font-size: 14px; /* Уменьшено */
-  
+  font-size: 14px;
+
   @media (min-width: 768px) {
     font-size: 16px;
   }
-  
+
   @media (min-width: 992px) {
     font-size: 18px;
   }
@@ -239,7 +235,7 @@ const finishOrder = () => {
   flex-direction: column;
   gap: 15px;
   width: 100%;
-  
+
   @media (min-width: 768px) {
     flex-direction: row;
     justify-content: flex-end;
@@ -248,41 +244,33 @@ const finishOrder = () => {
 }
 
 .cart-btn {
-  padding: 12px 24px; /* Увеличено до стандартных размеров авторизации */
+  padding: 12px 24px;
   background: #000;
   color: #fff;
-  font-size: 16px; /* Совпадает с размерами в авторизации */
+  font-size: 16px;
+  font-weight: 700;
   border: none;
   cursor: pointer;
   transition: all 0.3s ease;
   width: 100%;
-  
+
   @media (min-width: 768px) {
     width: auto;
     min-width: 180px;
-    font-size: 16px; /* Совпадает с размерами в авторизации */
-    padding: 12px 24px; /* Совпадает с размерами в авторизации */
   }
-  
+
   @media (min-width: 992px) {
     min-width: 200px;
-    font-size: 16px; /* Совпадает с размерами в авторизации */
   }
-  
+
   &:hover {
     background: #fff;
     color: #000;
     border: 1px solid #000;
   }
-  
-  &.cart-btn-order {
-    background: #000;
-    font-weight: 700;
-  }
 }
 
-
-/* Стили для модального окна */
+/* Стили модального окна */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -303,7 +291,7 @@ const finishOrder = () => {
   max-width: 400px;
   max-height: 90vh;
   overflow-y: auto;
-  
+
   @media (min-width: 768px) {
     width: 80%;
     max-width: 500px;
@@ -316,12 +304,12 @@ const finishOrder = () => {
   align-items: center;
   padding: 15px;
   border-bottom: 1px solid #ddd;
-  
+
   h3 {
     margin: 0;
     font-size: 18px;
     font-weight: 500;
-    
+
     @media (min-width: 768px) {
       font-size: 20px;
     }
@@ -334,7 +322,7 @@ const finishOrder = () => {
   font-size: 24px;
   cursor: pointer;
   color: #555;
-  
+
   &:hover {
     color: #000;
   }
@@ -342,11 +330,11 @@ const finishOrder = () => {
 
 .modal-body {
   padding: 15px;
-  
+
   p {
     margin: 8px 0;
-    font-size: 14px; /* Уменьшено */
-    
+    font-size: 14px;
+
     @media (min-width: 768px) {
       font-size: 16px;
     }
@@ -367,16 +355,15 @@ const finishOrder = () => {
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  font-size: 12px; /* Уменьшено */
-  
+  font-size: 12px;
+
   @media (min-width: 768px) {
     font-size: 14px;
     padding: 10px 20px;
   }
-  
+
   &:hover {
     background: #333;
   }
 }
-
-</style> 
+</style>
