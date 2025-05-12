@@ -6,15 +6,15 @@
 
     <div class="watches-container">
       <Watch 
-        imageSrc="/ClockWise/src/assets/главная страница/новинки 1.png"
+        imageSrc="https://raw.githubusercontent.com/Hhutxx/ClockWise/refs/heads/main/src/assets/главная%20страница/новинки%201.png"
         brand="CHANEL"
       />
       <Watch 
-        imageSrc="/ClockWise/src/assets/главная страница/новинки 2.png"
+        imageSrc="https://raw.githubusercontent.com/Hhutxx/ClockWise/refs/heads/main/src/assets/главная%20страница/новинки%202.png"
         brand="Vivienne Westwood"
       />
       <Watch 
-        imageSrc="/ClockWise/src/assets/главная страница/новинки 3.png"
+        imageSrc="https://raw.githubusercontent.com/Hhutxx/ClockWise/refs/heads/main/src/assets/главная%20страница/новинки%203.png"
         brand="Cartier"
       />
     </div>
