@@ -39,7 +39,7 @@
         <div class="input-wrapper">
           <input v-model="form.phone" @input="validatePhone" type="tel" placeholder="Телефон" />
           <div v-if="errors.phone" class="error-message">
-            Телефон должен быть в формате +7XXXXXXXXXX или 8XXXXXXXXXX
+            Телефон должен быть в формате +7 или 8
           </div>
         </div>
       </div>
