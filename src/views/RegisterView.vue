@@ -10,29 +10,37 @@
       <div class="register-row">
         <label>Фамилия</label>
         <div class="input-wrapper">
-          <input v-model="form.surname" type="text" placeholder="Фамилия" />
-          <div v-if="errors.surname" class="error-message">Заполните пожалуйста поле</div>
+          <input v-model="form.surname" @input="validateSurname" type="text" placeholder="Фамилия" />
+          <div v-if="errors.surname" class="error-message">
+            Фамилия должна начинаться с заглавной буквы и содержать только кириллицу
+          </div>
         </div>
       </div>
       <div class="register-row">
         <label>Имя</label>
         <div class="input-wrapper">
-          <input v-model="form.name" type="text" placeholder="Имя" />
-          <div v-if="errors.name" class="error-message">Заполните пожалуйста поле</div>
+          <input v-model="form.name" @input="validateName" type="text" placeholder="Имя" />
+          <div v-if="errors.name" class="error-message">
+            Имя должно начинаться с заглавной буквы и содержать только кириллицу
+          </div>
         </div>
       </div>
       <div class="register-row">
         <label>E-Mail</label>
         <div class="input-wrapper">
-          <input v-model="form.email" type="email" placeholder="E-Mail" />
-          <div v-if="errors.email" class="error-message">Заполните пожалуйста поле</div>
+          <input v-model="form.email" @input="validateEmail" type="email" placeholder="E-Mail" />
+          <div v-if="errors.email" class="error-message">
+            Неверный формат E-Mail
+          </div>
         </div>
       </div>
       <div class="register-row">
         <label>Телефон</label>
         <div class="input-wrapper">
-          <input v-model="form.phone" type="tel" placeholder="Телефон" />
-          <div v-if="errors.phone" class="error-message">Заполните пожалуйста поле</div>
+          <input v-model="form.phone" @input="validatePhone" type="tel" placeholder="Телефон" />
+          <div v-if="errors.phone" class="error-message">
+            Телефон должен быть в формате +7XXXXXXXXXX или 8XXXXXXXXXX
+          </div>
         </div>
       </div>
       <div class="register-section-title" style="margin-top:40px">Ваш пароль</div>
@@ -80,6 +88,23 @@ const errors = ref({
   password2: false
 })
 
+const regexName = /^[А-ЯЁ][а-яё]+$/
+const regexPhone = /^((\+7)|8)\d{10}$/
+const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
+function validateSurname() {
+  errors.value.surname = !regexName.test(form.value.surname.trim())
+}
+function validateName() {
+  errors.value.name = !regexName.test(form.value.name.trim())
+}
+function validatePhone() {
+  errors.value.phone = !regexPhone.test(form.value.phone.trim())
+}
+function validateEmail() {
+  errors.value.email = !regexEmail.test(form.value.email.trim())
+}
+
 function onRegister() {
   error.value = ''
 
@@ -87,15 +112,22 @@ function onRegister() {
     errors.value[key as keyof typeof errors.value] = false
   })
 
-  let hasEmpty = false
-  for (const key in form.value) {
-    if (!form.value[key as keyof typeof form.value].trim()) {
-      errors.value[key as keyof typeof errors.value] = true
-      hasEmpty = true
-    }
-  }
+  if (!form.value.surname.trim()) errors.value.surname = true
+  if (!form.value.name.trim()) errors.value.name = true
+  if (!form.value.email.trim()) errors.value.email = true
+  if (!form.value.phone.trim()) errors.value.phone = true
+  if (!form.value.password.trim()) errors.value.password = true
+  if (!form.value.password2.trim()) errors.value.password2 = true
 
-  if (hasEmpty) return
+  validateSurname()
+  validateName()
+  validateEmail()
+  validatePhone()
+
+  if (Object.values(errors.value).some(val => val)) {
+    error.value = 'Пожалуйста, исправьте ошибки в форме'
+    return
+  }
 
   if (form.value.password !== form.value.password2) {
     error.value = 'Пароли не совпадают'
@@ -119,6 +151,7 @@ function onRegister() {
   router.push('/login')
 }
 </script>
+
 
 <style scoped lang="scss">
 .register-bg {
