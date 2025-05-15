@@ -1,76 +1,3 @@
-<template>
-  <header class="header">
-    <div class="header-container container">
-
-      <div class="logo logo-container" @click="navigateTo('/')">
-        <img src="../assets/logo.svg" alt="logo" />
-      </div>
-
-
-      <div class="burger" :class="{ open: menuOpen }" @click="toggleMenu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-
-
-      <nav :class="['menu', { open: menuOpen }]">
-
-        <ul class="menu-left">
-          <li>
-            <a 
-              @click.prevent="navigateAndClose('/about')" 
-              :class="['nav-link', { active: isActive('/about') }]">О нас</a>
-          </li>
-          <li>
-            <a 
-              @click.prevent="navigateAndClose('/catalog')" 
-              :class="['nav-link', { active: isActive('/catalog') }]">Каталог</a>
-          </li>
-          <li>
-            <a 
-              @click.prevent="navigateAndClose('/register')" 
-              :class="['nav-link', { active: isActive('/register') }]">Регистрация</a>
-          </li>
-          <li>
-            <a 
-              @click.prevent="navigateAndClose('/login')" 
-              :class="['nav-link', { active: isActive('/login') }]">Авторизация</a>
-          </li>
-        </ul>
-
-
-        <div class="menu-right">
-          <div class="cart" @click="navigateAndClose('/profile')">
-            <img
-              v-if="router.currentRoute.value.path !== '/profile'"
-              src="../assets/lg2.svg"
-              alt="личный кабинет"
-            />
-            <img
-              v-else
-              src="../assets/lg.svg"
-              alt="личный кабинет"
-            />
-          </div>
-          <div class="cart" @click="navigateAndClose('/cart')">
-            <img
-              v-if="router.currentRoute.value.path !== '/cart'"
-              src="../assets/cart.svg"
-              alt="корзина"
-            />
-            <img
-              v-else
-              src="../assets/cart copy.svg"
-              alt="корзина"
-            />
-          </div>
-        </div>
-      </nav>
-    </div>
-  </header>
-</template>
-
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
@@ -95,6 +22,58 @@ const isActive = (path: string) => {
   return router.currentRoute.value.path === path
 }
 </script>
+<template>
+  <header class="header">
+    <div class="header-container container">
+
+      <div class="logo logo-container" @click="navigateTo('/')">
+        <img src="../assets/logo.svg" alt="logo" />
+      </div>
+
+
+      <div class="burger" :class="{ open: menuOpen }" @click="toggleMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+
+      <nav :class="['menu', { open: menuOpen }]">
+
+        <ul class="menu-left">
+          <li>
+            <a @click.prevent="navigateAndClose('/about')" :class="['nav-link', { active: isActive('/about') }]">О нас</a>
+          </li>
+          <li>
+            <a @click.prevent="navigateAndClose('/catalog')"
+              :class="['nav-link', { active: isActive('/catalog') }]">Каталог</a>
+          </li>
+          <li>
+            <a @click.prevent="navigateAndClose('/register')"
+              :class="['nav-link', { active: isActive('/register') }]">Регистрация</a>
+          </li>
+          <li>
+            <a @click.prevent="navigateAndClose('/login')"
+              :class="['nav-link', { active: isActive('/login') }]">Авторизация</a>
+          </li>
+        </ul>
+
+
+        <div class="menu-right">
+          <div class="cart" @click="navigateAndClose('/profile')">
+            <img v-if="router.currentRoute.value.path !== '/profile'" src="../assets/lg2.svg" alt="личный кабинет" />
+            <img v-else src="../assets/lg.svg" alt="личный кабинет" />
+          </div>
+          <div class="cart" @click="navigateAndClose('/cart')">
+            <img v-if="router.currentRoute.value.path !== '/cart'" src="../assets/cart.svg" alt="корзина" />
+            <img v-else src="../assets/cart copy.svg" alt="корзина" />
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+</template>
+
 
 <style scoped lang="scss">
 .header {
@@ -209,7 +188,7 @@ const isActive = (path: string) => {
     margin: 0;
 
     @media (min-width: 768px) {
-      margin-left: 32px; 
+      margin-left: 32px;
     }
   }
 

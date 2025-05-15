@@ -1,24 +1,3 @@
-<template>
-  <div v-if="isHeader" class="cart-row-header">
-    <div class="cart-row-header-qty">Количество</div>
-    <div class="cart-row-header-price">Итого</div>
-    <div class="cart-row-header-close"></div>
-  </div>
-  <div v-else class="cart-row">
-    <img :src="product?.imageSrc" :alt="product?.title" class="cart-row-img" />
-    <div class="cart-row-title">{{ product?.title }}</div>
-    <div class="cart-row-qty-block">
-      <button class="cart-row-qty-btn cart-row-minus" @click="$emit('decrement')">-</button>
-      <span class="cart-row-qty">{{ qty ?? 1 }}</span>
-      <button class="cart-row-qty-btn cart-row-plus" @click="$emit('increment')">+</button>
-    </div>
-    <div class="cart-row-price">{{ formatPrice(product?.price, qty ?? 1) }} Р</div>
-    <button class="cart-row-remove" @click="$emit('remove')">
-      <svg width="14" height="14" viewBox="0 0 14 14"><line x1="0" y1="0" x2="14" y2="14" stroke="rgba(0,0,0,0.5)" stroke-width="2"/><line x1="14" y1="0" x2="0" y2="14" stroke="rgba(0,0,0,0.5)" stroke-width="2"/></svg>
-    </button>
-  </div>
-</template>
-
 <script setup lang="ts">
 defineProps<{
   product?: { id: string, title: string, imageSrc: string, price: number|string },
@@ -44,6 +23,27 @@ function formatPrice(price: number|string|undefined, qty: number|undefined): str
   return (p * q).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ')
 }
 </script>
+<template>
+  <div v-if="isHeader" class="cart-row-header">
+    <div class="cart-row-header-qty">Количество</div>
+    <div class="cart-row-header-price">Итого</div>
+    <div class="cart-row-header-close"></div>
+  </div>
+  <div v-else class="cart-row">
+    <img :src="product?.imageSrc" :alt="product?.title" class="cart-row-img" />
+    <div class="cart-row-title">{{ product?.title }}</div>
+    <div class="cart-row-qty-block">
+      <button class="cart-row-qty-btn cart-row-minus" @click="$emit('decrement')">-</button>
+      <span class="cart-row-qty">{{ qty ?? 1 }}</span>
+      <button class="cart-row-qty-btn cart-row-plus" @click="$emit('increment')">+</button>
+    </div>
+    <div class="cart-row-price">{{ formatPrice(product?.price, qty ?? 1) }} Р</div>
+    <button class="cart-row-remove" @click="$emit('remove')">
+      <svg width="14" height="14" viewBox="0 0 14 14"><line x1="0" y1="0" x2="14" y2="14" stroke="rgba(0,0,0,0.5)" stroke-width="2"/><line x1="14" y1="0" x2="0" y2="14" stroke="rgba(0,0,0,0.5)" stroke-width="2"/></svg>
+    </button>
+  </div>
+</template>
+
 
 <style scoped lang="scss">
 .cart-row-header {

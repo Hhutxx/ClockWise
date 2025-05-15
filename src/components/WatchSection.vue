@@ -1,3 +1,7 @@
+<script setup lang="ts">
+import Watch from './Watch.vue'
+</script>
+    
 <template>
   <section class="watch-section">
     <div class="heading-container">
@@ -5,30 +9,24 @@
     </div>
 
     <div class="watches-container">
-      <Watch 
+      <Watch
         imageSrc="https://raw.githubusercontent.com/Hhutxx/ClockWise/refs/heads/main/src/assets/главная%20страница/новинки%201.png"
-        brand="CHANEL"
-      />
-      <Watch 
+        brand="CHANEL" />
+      <Watch
         imageSrc="https://raw.githubusercontent.com/Hhutxx/ClockWise/refs/heads/main/src/assets/главная%20страница/новинки%202.png"
-        brand="Vivienne Westwood"
-      />
-      <Watch 
+        brand="Vivienne Westwood" />
+      <Watch
         imageSrc="https://raw.githubusercontent.com/Hhutxx/ClockWise/refs/heads/main/src/assets/главная%20страница/новинки%203.png"
-        brand="Cartier"
-      />
+        brand="Cartier" />
     </div>
   </section>
 </template>
 
-<script setup lang="ts">
-import Watch from './Watch.vue'
-</script>
 
 <style scoped lang="scss">
 .watch-section {
   width: 100%;
-  background-color: rgba(200, 200, 200, 0.5); 
+  background-color: rgba(200, 200, 200, 0.5);
   padding: 2vw 3vw;
   box-sizing: border-box;
 }
@@ -78,36 +76,36 @@ import Watch from './Watch.vue'
   width: 100%;
   height: auto;
   object-fit: contain;
-  max-width: 180px; 
+  max-width: 180px;
 }
 
 
 .watch-brand {
-  font-size: clamp(0.5rem, 1.2vw, 0.7rem); 
+  font-size: clamp(0.5rem, 1.2vw, 0.7rem);
   font-weight: 500;
   text-align: center;
-  color: #333; 
+  color: #333;
 }
 
 
 @media (max-width: 600px) {
   .watches-container {
-    display: flex; 
-    justify-content: space-between; 
-    flex-wrap: nowrap; 
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
   }
 
   .watch-card {
-    flex: 0 0 30%; 
-    max-width: 100%; 
+    flex: 0 0 30%;
+    max-width: 100%;
   }
 
   .watch-image {
-    max-width: 80px; 
+    max-width: 80px;
   }
 
   .watch-brand {
-    font-size: clamp(0.4rem, 3vw, 0.6rem); 
+    font-size: clamp(0.4rem, 3vw, 0.6rem);
   }
 }
 
@@ -118,18 +116,18 @@ import Watch from './Watch.vue'
   }
 
   .watch-card {
-    flex: 0 0 30%; 
+    flex: 0 0 30%;
   }
 
   .watch-brand {
-    font-size: clamp(0.5rem, 2vw, 0.7rem); 
+    font-size: clamp(0.5rem, 2vw, 0.7rem);
   }
 }
 
 
 @media (max-width: 1200px) {
   .watch-card {
-    flex: 0 0 22%; 
+    flex: 0 0 22%;
     max-width: 240px;
   }
 
@@ -138,8 +136,7 @@ import Watch from './Watch.vue'
   }
 
   .watch-brand {
-    font-size: clamp(0.6rem, 1.8vw, 0.8rem); 
+    font-size: clamp(0.6rem, 1.8vw, 0.8rem);
   }
 }
-
 </style>

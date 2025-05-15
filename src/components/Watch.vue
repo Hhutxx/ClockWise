@@ -1,3 +1,10 @@
+<script setup lang="ts">
+defineProps<{
+  imageSrc: string
+  brand: string
+}>()
+</script> 
+    
 <template>
   <div class="watch-card">
     <div class="watch-image-container">
@@ -7,12 +14,6 @@
   </div>
 </template>
 
-<script setup lang="ts">
-defineProps<{
-  imageSrc: string
-  brand: string
-}>()
-</script>
 
 <style scoped lang="scss">
 .watch-card {
@@ -43,7 +44,7 @@ defineProps<{
 }
 
 .watch-brand {
-  font-size: clamp(0.8rem, 2vw, 1rem); 
+  font-size: clamp(0.8rem, 2vw, 1rem);
   font-weight: 500;
   text-align: center;
   color: #191919;

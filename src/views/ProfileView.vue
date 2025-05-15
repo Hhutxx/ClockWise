@@ -1,17 +1,3 @@
-<template>
-  <div class="profile-bg">
-    <div class="profile-title">Личный кабинет</div>
-    <div v-if="user" class="profile-info">
-      <div class="profile-row"><b>Фамилия:</b> {{ user.surname }}</div>
-      <div class="profile-row"><b>Имя:</b> {{ user.name }}</div>
-      <div class="profile-row"><b>Email:</b> {{ user.email }}</div>
-      <div class="profile-row"><b>Телефон:</b> {{ user.phone }}</div>
-      <button class="profile-logout" @click="logout">Выйти</button>
-    </div>
-    <div v-else class="profile-empty">Не авторизован</div>
-  </div>
-</template>
-
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
@@ -30,13 +16,28 @@ function logout() {
 }
 </script>
 
+<template>
+  <div class="profile-bg">
+    <div class="profile-title">Личный кабинет</div>
+    <div v-if="user" class="profile-info">
+      <div class="profile-row"><b>Фамилия:</b> {{ user.surname }}</div>
+      <div class="profile-row"><b>Имя:</b> {{ user.name }}</div>
+      <div class="profile-row"><b>Email:</b> {{ user.email }}</div>
+      <div class="profile-row"><b>Телефон:</b> {{ user.phone }}</div>
+      <button class="profile-logout" @click="logout">Выйти</button>
+    </div>
+    <div v-else class="profile-empty">Не авторизован</div>
+  </div>
+</template>
+
+
 <style scoped lang="scss">
 .profile-bg {
   background-color: rgba(233, 233, 233, 0.5);
   padding: 20px 15px;
   max-width: 400px;
   margin: 40px auto;
-  border-radius: 0;  
+  border-radius: 0;
 
   @media (max-width: 576px) {
     padding: 15px 10px;
@@ -45,7 +46,7 @@ function logout() {
 }
 
 .profile-title {
-  font-size: 16px; 
+  font-size: 16px;
   font-weight: 600;
   color: #000;
   margin-bottom: 16px;
@@ -70,7 +71,7 @@ function logout() {
 }
 
 .profile-row {
-  font-size: 16px; 
+  font-size: 16px;
   color: #000;
 
   @media (min-width: 576px) {
@@ -89,10 +90,10 @@ function logout() {
 .profile-logout {
   width: 100%;
   max-width: 180px;
-  height: 36px;  
+  height: 36px;
   background: #000;
   color: #fff;
-  font-size: 14px; 
+  font-size: 14px;
   border: none;
   margin-top: 20px;
   margin-left: auto;
@@ -101,8 +102,8 @@ function logout() {
 
   @media (max-width: 576px) {
     font-size: 14px;
-    height: 36px;  
-    padding: 10px;  
+    height: 36px;
+    padding: 10px;
   }
 
   @media (min-width: 576px) {
@@ -128,7 +129,7 @@ function logout() {
 }
 
 .profile-empty {
-  font-size: 16px; 
+  font-size: 16px;
   color: #888;
 
   @media (min-width: 576px) {

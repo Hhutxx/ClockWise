@@ -1,52 +1,3 @@
-<template>
-  <div class="cart-bg">
-    <div class="cart-title">Корзина</div>
-    <div class="cart-content">
-      <div v-if="cartProducts.length === 0" class="cart-box">
-        <div class="cart-empty">Ваша корзина пуста!</div>
-      </div>
-      <div v-else class="cart-box">
-        <CartProductRow isHeader />
-        <CartProductRow
-          v-for="product in cartProducts"
-          :key="product.id"
-          :product="product"
-          :qty="qtyMap[product.id] || 1"
-          @increment="increment(product.id)"
-          @decrement="decrement(product.id)"
-          @remove="remove(product.id)"
-        />
-        <div class="cart-total-row">
-          <div class="cart-total-label">Всего:</div>
-          <div class="cart-total-value">{{ total }} Р</div>
-        </div>
-      </div>
-      <div class="cart-btn-row">
-        <button class="cart-btn" @click="goToCatalog">В каталог</button>
-        <button v-if="cartProducts.length > 0" class="cart-btn" @click="showOrderModal = true">Оформить заказ</button>
-      </div>
-    </div>
-
-
-    <div v-if="showOrderModal" class="modal-overlay" @click="showOrderModal = false">
-      <div class="modal-content" @click.stop>
-        <div class="modal-header">
-          <h3>Оформление заказа</h3>
-          <button class="modal-close" @click="showOrderModal = false">×</button>
-        </div>
-        <div class="modal-body">
-          <p>Заказ успешно оформлен!</p>
-          <p>Общая сумма заказа: {{ total }} Р</p>
-          <p>Спасибо за покупку в нашем магазине!</p>
-        </div>
-        <div class="modal-footer">
-          <button class="modal-btn" @click="finishOrder">Завершить</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</template>
-
 <script setup lang="ts">
 import { useRouter } from 'vue-router'
 import { computed, reactive, onMounted, ref } from 'vue'
@@ -94,7 +45,51 @@ const finishOrder = () => {
   showOrderModal.value = false
   router.push('/catalog')
 }
-</script>
+</script> 
+
+<template>
+  <div class="cart-bg">
+    <div class="cart-title">Корзина</div>
+    <div class="cart-content">
+      <div v-if="cartProducts.length === 0" class="cart-box">
+        <div class="cart-empty">Ваша корзина пуста!</div>
+      </div>
+      <div v-else class="cart-box">
+        <CartProductRow isHeader />
+        <CartProductRow v-for="product in cartProducts" :key="product.id" :product="product"
+          :qty="qtyMap[product.id] || 1" @increment="increment(product.id)" @decrement="decrement(product.id)"
+          @remove="remove(product.id)" />
+        <div class="cart-total-row">
+          <div class="cart-total-label">Всего:</div>
+          <div class="cart-total-value">{{ total }} Р</div>
+        </div>
+      </div>
+      <div class="cart-btn-row">
+        <button class="cart-btn" @click="goToCatalog">В каталог</button>
+        <button v-if="cartProducts.length > 0" class="cart-btn" @click="showOrderModal = true">Оформить заказ</button>
+      </div>
+    </div>
+
+
+    <div v-if="showOrderModal" class="modal-overlay" @click="showOrderModal = false">
+      <div class="modal-content" @click.stop>
+        <div class="modal-header">
+          <h3>Оформление заказа</h3>
+          <button class="modal-close" @click="showOrderModal = false">×</button>
+        </div>
+        <div class="modal-body">
+          <p>Заказ успешно оформлен!</p>
+          <p>Общая сумма заказа: {{ total }} Р</p>
+          <p>Спасибо за покупку в нашем магазине!</p>
+        </div>
+        <div class="modal-footer">
+          <button class="modal-btn" @click="finishOrder">Завершить</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
 
 <style scoped lang="scss">
 .cart-bg {

@@ -1,3 +1,6 @@
+<script setup lang="ts">
+</script>
+
 <template>
     <section class="sale-section">
         <div class="sale-container">
@@ -11,19 +14,17 @@
                     <p class="sale-date">1 Июня - 10 Июля 2025</p>
                 </div>
                 <div class="sale-button">
-                    <a href="/ClockWise/catalog">За покупками</a> 
+                    <a href="/ClockWise/catalog">За покупками</a>
                 </div>
             </div>
         </div>
     </section>
 </template>
 
-<script setup lang="ts">
-</script>
 
 <style scoped lang="scss">
 .sale-section {
-    background-color: rgba(200, 200, 200, 0.5); 
+    background-color: rgba(200, 200, 200, 0.5);
     width: 100%;
     min-height: 0;
 }
@@ -84,23 +85,23 @@
     letter-spacing: 0.02em;
     color: #fff;
     background: #000;
-    width: 35vw; 
-    max-width: 180px; 
+    width: 35vw;
+    max-width: 180px;
     min-width: 90px;
-    height: 5vw; 
-    max-height: 40px; 
+    height: 5vw;
+    max-height: 40px;
     min-height: 30px;
     transition: all 0.3s ease;
     border: none;
 
-    font-size: 0.8rem; 
+    font-size: 0.8rem;
     text-align: center;
-    line-height: 40px; 
+    line-height: 40px;
 
     &:hover {
-        background: transparent; 
-        color: #000; 
-        border: 1px solid #000; 
+        background: transparent;
+        color: #000;
+        border: 1px solid #000;
         cursor: pointer;
     }
 }
@@ -117,7 +118,8 @@ p {
         gap: 4vw;
     }
 
-    .sale-image, .sale-content {
+    .sale-image,
+    .sale-content {
         max-width: 100%;
     }
 
@@ -169,5 +171,4 @@ p {
         font-size: 1rem;
     }
 }
-
 </style>

@@ -12,6 +12,4 @@ import SaleSection from '@/components/SaleSection.vue'
   <SaleSection />
 </template>
 
-<style scoped lang="scss">
-
-</style>
+<style scoped lang="scss"></style>

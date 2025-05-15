@@ -1,28 +1,3 @@
-<template>
-  <div class="login-bg">
-    <div class="login-title">Зарегистрированный клиент</div>
-    <div class="login-subtitle">Войти в личный кабинет</div>
-    <form class="login-form" @submit.prevent="onLogin">
-      <div class="login-row">
-        <label>E-Mail</label>
-        <div class="input-wrapper">
-          <input v-model="form.email" type="email" placeholder="E-Mail" />
-          <div v-if="errors.email" class="error-message">Заполните пожалуйста поле</div>
-        </div>
-      </div>
-      <div class="login-row">
-        <label>Пароль</label>
-        <div class="input-wrapper">
-          <input v-model="form.password" type="password" placeholder="Пароль" />
-          <div v-if="errors.password" class="error-message">Заполните пожалуйста поле</div>
-        </div>
-      </div>
-      <div class="login-error" v-if="error">{{ error }}</div>
-      <button class="login-btn" type="submit">Войти</button>
-    </form>
-  </div>
-</template>
-
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
@@ -66,16 +41,42 @@ function onLogin() {
 }
 </script>
 
+<template>
+  <div class="login-bg">
+    <div class="login-title">Зарегистрированный клиент</div>
+    <div class="login-subtitle">Войти в личный кабинет</div>
+    <form class="login-form" @submit.prevent="onLogin">
+      <div class="login-row">
+        <label>E-Mail</label>
+        <div class="input-wrapper">
+          <input v-model="form.email" type="email" placeholder="E-Mail" />
+          <div v-if="errors.email" class="error-message">Заполните пожалуйста поле</div>
+        </div>
+      </div>
+      <div class="login-row">
+        <label>Пароль</label>
+        <div class="input-wrapper">
+          <input v-model="form.password" type="password" placeholder="Пароль" />
+          <div v-if="errors.password" class="error-message">Заполните пожалуйста поле</div>
+        </div>
+      </div>
+      <div class="login-error" v-if="error">{{ error }}</div>
+      <button class="login-btn" type="submit">Войти</button>
+    </form>
+  </div>
+</template>
+
+
 <style scoped lang="scss">
 .login-bg {
   background-color: rgba(233, 233, 233, 0.5);
-  border-radius: 0;  
-  padding: 20px 15px;  
+  border-radius: 0;
+  padding: 20px 15px;
   max-width: 400px;
   margin: 40px auto;
 
   @media (max-width: 576px) {
-    padding: 15px 10px;  
+    padding: 15px 10px;
     max-width: 100%;
   }
 }
@@ -99,7 +100,7 @@ function onLogin() {
   }
 
   @media (max-width: 576px) {
-    font-size: 14px;  
+    font-size: 14px;
   }
 }
 
@@ -123,17 +124,17 @@ function onLogin() {
   }
 
   @media (max-width: 576px) {
-    font-size: 12px;  
+    font-size: 12px;
   }
 }
 
 .login-form {
   display: flex;
   flex-direction: column;
-  gap: 12px;  
+  gap: 12px;
 
   @media (max-width: 576px) {
-    gap: 8px;  
+    gap: 8px;
   }
 }
 
@@ -161,7 +162,7 @@ function onLogin() {
   }
 
   @media (max-width: 576px) {
-    font-size: 12px;  
+    font-size: 12px;
   }
 }
 
@@ -185,8 +186,8 @@ function onLogin() {
   }
 
   @media (max-width: 576px) {
-    font-size: 14px;  
-    padding: 8px 10px;  
+    font-size: 14px;
+    padding: 8px 10px;
   }
 
   @media (min-width: 576px) {
@@ -204,11 +205,11 @@ function onLogin() {
 
 .login-btn {
   width: 100%;
-  max-width: 180px; 
-  height: 40px; 
+  max-width: 180px;
+  height: 40px;
   background: #000;
   color: #fff;
-  font-size: 14px; 
+  font-size: 14px;
   border: none;
   border-radius: 0;
   margin-top: 24px;
@@ -217,13 +218,13 @@ function onLogin() {
   transition: background 0.2s, color 0.2s;
 
   @media (max-width: 576px) {
-    font-size: 14px; 
-    height: 44px; 
+    font-size: 14px;
+    height: 44px;
   }
 
   @media (min-width: 576px) {
     font-size: 16px;
-    height: 48px; 
+    height: 48px;
   }
 
   @media (min-width: 768px) {
@@ -248,7 +249,7 @@ function onLogin() {
   font-size: 12px;
 
   @media (max-width: 576px) {
-    font-size: 14px;  
+    font-size: 14px;
   }
 
   @media (min-width: 576px) {
@@ -270,7 +271,7 @@ function onLogin() {
   margin-top: 4px;
 
   @media (max-width: 576px) {
-    font-size: 14px;  
+    font-size: 14px;
   }
 
   @media (min-width: 576px) {
@@ -285,6 +286,4 @@ function onLogin() {
     font-size: 18px;
   }
 }
-
-
 </style>

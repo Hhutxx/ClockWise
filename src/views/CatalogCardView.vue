@@ -1,3 +1,37 @@
+<script setup lang="ts">
+import { useRoute, useRouter } from 'vue-router'
+import { computed, ref } from 'vue'
+import { products } from '../composables/products'
+import { useCart } from '../composables/useCart'
+
+const route = useRoute()
+const router = useRouter()
+const product = computed(() => products.find(p => p.id === route.params.id))
+
+const { cart, addToCart } = useCart()
+
+const isInCart = computed(() => product.value && cart.value.includes(product.value.id))
+const showAddedToCartModal = ref(false)
+
+const handleAddToCart = () => {
+  if (product.value && !isInCart.value) {
+    addToCart(product.value.id)
+    showAddedToCartModal.value = true
+  }
+}
+
+const closeModal = () => {
+  showAddedToCartModal.value = false
+}
+
+const navigateToCatalog = () => {
+  router.push('/catalog')
+}
+
+const navigateToCart = () => {
+  router.push('/cart')
+}
+</script>
 <template>
   <div class="product-bg">
     <div v-if="product" class="product-main">
@@ -34,7 +68,7 @@
       </div>
     </div>
     <div v-else style="padding: 40px; font-size: 24px; color: #000">Товар не найден</div>
-    
+
     <div v-if="showAddedToCartModal" class="modal-overlay" @click="closeModal">
       <div class="modal-content" @click.stop>
         <div class="modal-header">
@@ -53,40 +87,6 @@
   </div>
 </template>
 
-<script setup lang="ts">
-import { useRoute, useRouter } from 'vue-router'
-import { computed, ref } from 'vue'
-import { products } from '../composables/products'
-import { useCart } from '../composables/useCart'
-
-const route = useRoute()
-const router = useRouter()
-const product = computed(() => products.find(p => p.id === route.params.id))
-
-const { cart, addToCart } = useCart()
-
-const isInCart = computed(() => product.value && cart.value.includes(product.value.id))
-const showAddedToCartModal = ref(false)
-
-const handleAddToCart = () => {
-  if (product.value && !isInCart.value) {
-    addToCart(product.value.id)
-    showAddedToCartModal.value = true
-  }
-}
-
-const closeModal = () => {
-  showAddedToCartModal.value = false
-}
-
-const navigateToCatalog = () => {
-  router.push('/catalog')
-}
-
-const navigateToCart = () => {
-  router.push('/cart')
-}
-</script>
 
 <style scoped lang="scss">
 .product-bg {

@@ -1,3 +1,5 @@
+<script setup lang="ts">
+</script>
 <template>
   <div class="marquee-container">
     <div class="marquee">
@@ -30,13 +32,11 @@
 </template>
 
 
-<script setup lang="ts">
-</script>
 
 <style scoped lang="scss">
 .marquee-container {
   width: 100%;
-  background-color: rgba(200, 200, 200, 0.5); 
+  background-color: rgba(200, 200, 200, 0.5);
   overflow: hidden;
   padding: 30px 0 25px 0;
 }
@@ -67,6 +67,7 @@
   0% {
     transform: translateX(0%);
   }
+
   100% {
     transform: translateX(-100%);
   }

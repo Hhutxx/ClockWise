@@ -1,13 +1,3 @@
-<template>
-  <div class="product-card" @click="navigateTo(`/catalog/${id}`)">
-    <div class="product-image-container">
-      <img :src="imageSrc" :alt="title" class="product-image" />
-    </div>
-    <div class="product-title">{{ title }}</div>
-    <div class="product-price">{{ price }} ₽</div>
-  </div>
-</template>
-
 <script setup lang="ts">
 import { useRouter } from 'vue-router';
 
@@ -24,6 +14,16 @@ const navigateTo = (path: string) => {
   router.push(path);
 };
 </script>
+<template>
+  <div class="product-card" @click="navigateTo(`/catalog/${id}`)">
+    <div class="product-image-container">
+      <img :src="imageSrc" :alt="title" class="product-image" />
+    </div>
+    <div class="product-title">{{ title }}</div>
+    <div class="product-price">{{ price }} ₽</div>
+  </div>
+</template>
+
 
 <style scoped lang="scss">
 .product-card {
@@ -37,14 +37,14 @@ const navigateTo = (path: string) => {
   margin-bottom: 16px;
   box-sizing: border-box;
   transition: box-shadow 0.3s, transform 0.3s;
-  border-radius: 0;  
+  border-radius: 0;
 
   @media (max-width: 768px) {
-    max-width: 160px; 
+    max-width: 160px;
   }
 
   @media (max-width: 576px) {
-    max-width: 140px; 
+    max-width: 140px;
   }
 
   &:hover {
@@ -61,13 +61,13 @@ const navigateTo = (path: string) => {
   align-items: center;
   justify-content: center;
   background: #fff;
-  
+
   @media (max-width: 768px) {
-    height: 200px; 
+    height: 200px;
   }
 
   @media (max-width: 576px) {
-    height: 180px; 
+    height: 180px;
   }
 }
 
@@ -85,11 +85,11 @@ const navigateTo = (path: string) => {
   padding: 0 10px;
 
   @media (max-width: 768px) {
-    font-size: 14px; 
+    font-size: 14px;
   }
 
   @media (max-width: 576px) {
-    font-size: 12px; 
+    font-size: 12px;
   }
 }
 
@@ -101,11 +101,11 @@ const navigateTo = (path: string) => {
   text-align: center;
 
   @media (max-width: 768px) {
-    font-size: 16px; 
+    font-size: 16px;
   }
 
   @media (max-width: 576px) {
-    font-size: 14px; 
+    font-size: 14px;
   }
 }
 
@@ -116,11 +116,11 @@ const navigateTo = (path: string) => {
   text-align: center;
 
   @media (max-width: 768px) {
-    font-size: 12px; 
+    font-size: 12px;
   }
 
   @media (max-width: 576px) {
-    font-size: 10px; 
+    font-size: 10px;
   }
 }
 </style>

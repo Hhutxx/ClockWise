@@ -1,30 +1,24 @@
+<script setup lang="ts">
+</script>
 <template>
-    <div class="post-header">
-      <video
-        class="banner-video"
-        autoplay
-        muted
-        loop
-        playsinline
-      >
-        <source src="../assets/банер.mp4" type="video/mp4" />
-        Ваш браузер не поддерживает видео.
-      </video>
-  
-      <div class="overlay"></div>
-  
-      <div class="banner-text">
-        ClockWise
-      </div>
+  <div class="post-header">
+    <video class="banner-video" autoplay muted loop playsinline>
+      <source src="../assets/банер.mp4" type="video/mp4" />
+      Ваш браузер не поддерживает видео.
+    </video>
+
+    <div class="overlay"></div>
+
+    <div class="banner-text">
+      ClockWise
     </div>
-  </template>
+  </div>
+</template>
   
-  <script setup lang="ts">
-  // Всё чисто
-  </script>
   
-  <style scoped lang="scss">
-  html, body {
+<style scoped lang="scss">
+html,
+body {
   margin: 0;
   padding: 0;
   height: 100%;
@@ -44,7 +38,7 @@
     padding: 0;
   }
 
-  // Поддержка iOS Safari
+
   @supports (-webkit-touch-callout: none) {
     height: -webkit-fill-available;
   }
@@ -53,12 +47,12 @@
 .banner-video {
   width: 100%;
   height: 100%;
-  object-fit: cover; // Видео заполняет контейнер, обрезая лишнее
+  object-fit: cover;
   position: absolute;
   top: 0;
   left: 0;
   z-index: 0;
-  pointer-events: none; // Чтобы клики проходили сквозь видео, если нужно
+  pointer-events: none;
 }
 
 .overlay {
@@ -82,5 +76,5 @@
   padding: 0 20px;
   opacity: 0.7;
 }
-  </style>
+</style>
   

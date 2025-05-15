@@ -1,69 +1,3 @@
-<template>
-  <div class="register-bg">
-    <div class="register-title">Регистрация</div>
-    <div class="register-sub">
-      Если Вы уже зарегистрированы, перейдите на страницу
-      <router-link class="register-link" to="/login">авторизация</router-link>
-    </div>
-    <div class="register-section-title">Основные данные</div>
-    <form class="register-form" @submit.prevent="onRegister">
-      <div class="register-row">
-        <label>Фамилия</label>
-        <div class="input-wrapper">
-          <input v-model="form.surname" @input="validateSurname" type="text" placeholder="Фамилия" />
-          <div v-if="errors.surname" class="error-message">
-            Фамилия должна начинаться с заглавной буквы и содержать только кириллицу
-          </div>
-        </div>
-      </div>
-      <div class="register-row">
-        <label>Имя</label>
-        <div class="input-wrapper">
-          <input v-model="form.name" @input="validateName" type="text" placeholder="Имя" />
-          <div v-if="errors.name" class="error-message">
-            Имя должно начинаться с заглавной буквы и содержать только кириллицу
-          </div>
-        </div>
-      </div>
-      <div class="register-row">
-        <label>E-Mail</label>
-        <div class="input-wrapper">
-          <input v-model="form.email" @input="validateEmail" type="email" placeholder="E-Mail" />
-          <div v-if="errors.email" class="error-message">
-            Неверный формат E-Mail
-          </div>
-        </div>
-      </div>
-      <div class="register-row">
-        <label>Телефон</label>
-        <div class="input-wrapper">
-          <input v-model="form.phone" @input="validatePhone" type="tel" placeholder="Телефон" />
-          <div v-if="errors.phone" class="error-message">
-            Телефон должен быть в формате +7 или 8
-          </div>
-        </div>
-      </div>
-      <div class="register-section-title" style="margin-top:40px">Ваш пароль</div>
-      <div class="register-row">
-        <label>Пароль</label>
-        <div class="input-wrapper">
-          <input v-model="form.password" type="password" placeholder="Пароль" />
-          <div v-if="errors.password" class="error-message">Заполните пожалуйста поле</div>
-        </div>
-      </div>
-      <div class="register-row">
-        <label>Подтверждение пароля</label>
-        <div class="input-wrapper">
-          <input v-model="form.password2" type="password" placeholder="Подтверждение пароля" />
-          <div v-if="errors.password2" class="error-message">Заполните пожалуйста поле</div>
-        </div>
-      </div>
-      <div class="register-error" v-if="error">{{ error }}</div>
-      <button class="register-btn" type="submit">Продолжить</button>
-    </form>
-  </div>
-</template>
-
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
@@ -152,12 +86,77 @@ function onRegister() {
 }
 </script>
 
+<template>
+  <div class="register-bg">
+    <div class="register-title">Регистрация</div>
+    <div class="register-sub">
+      Если Вы уже зарегистрированы, перейдите на страницу
+      <router-link class="register-link" to="/login">авторизация</router-link>
+    </div>
+    <div class="register-section-title">Основные данные</div>
+    <form class="register-form" @submit.prevent="onRegister">
+      <div class="register-row">
+        <label>Фамилия</label>
+        <div class="input-wrapper">
+          <input v-model="form.surname" @input="validateSurname" type="text" placeholder="Фамилия" />
+          <div v-if="errors.surname" class="error-message">
+            Фамилия должна начинаться с заглавной буквы и содержать только кириллицу
+          </div>
+        </div>
+      </div>
+      <div class="register-row">
+        <label>Имя</label>
+        <div class="input-wrapper">
+          <input v-model="form.name" @input="validateName" type="text" placeholder="Имя" />
+          <div v-if="errors.name" class="error-message">
+            Имя должно начинаться с заглавной буквы и содержать только кириллицу
+          </div>
+        </div>
+      </div>
+      <div class="register-row">
+        <label>E-Mail</label>
+        <div class="input-wrapper">
+          <input v-model="form.email" @input="validateEmail" type="email" placeholder="E-Mail" />
+          <div v-if="errors.email" class="error-message">
+            Неверный формат E-Mail
+          </div>
+        </div>
+      </div>
+      <div class="register-row">
+        <label>Телефон</label>
+        <div class="input-wrapper">
+          <input v-model="form.phone" @input="validatePhone" type="tel" placeholder="Телефон" />
+          <div v-if="errors.phone" class="error-message">
+            Телефон должен быть в формате +7 или 8
+          </div>
+        </div>
+      </div>
+      <div class="register-section-title" style="margin-top:40px">Ваш пароль</div>
+      <div class="register-row">
+        <label>Пароль</label>
+        <div class="input-wrapper">
+          <input v-model="form.password" type="password" placeholder="Пароль" />
+          <div v-if="errors.password" class="error-message">Заполните пожалуйста поле</div>
+        </div>
+      </div>
+      <div class="register-row">
+        <label>Подтверждение пароля</label>
+        <div class="input-wrapper">
+          <input v-model="form.password2" type="password" placeholder="Подтверждение пароля" />
+          <div v-if="errors.password2" class="error-message">Заполните пожалуйста поле</div>
+        </div>
+      </div>
+      <div class="register-error" v-if="error">{{ error }}</div>
+      <button class="register-btn" type="submit">Продолжить</button>
+    </form>
+  </div>
+</template>
 
 <style scoped lang="scss">
 .register-bg {
   background-color: rgba(233, 233, 233, 0.5);
   border-radius: 0;
-  padding: 30px;  
+  padding: 30px;
   margin: auto auto;
 }
 
@@ -233,7 +232,7 @@ function onRegister() {
 .register-form {
   display: flex;
   flex-direction: column;
-  gap: 16px;  
+  gap: 16px;
 }
 
 .register-row {
@@ -272,10 +271,10 @@ function onRegister() {
 }
 
 .register-row input {
-  font-size: 14px;  
-  padding: 8px 12px;  
+  font-size: 14px;
+  padding: 8px 12px;
   border: 2px solid #888;
-  border-radius: 6px;  
+  border-radius: 6px;
   background: #fff;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 
@@ -363,5 +362,4 @@ function onRegister() {
     font-size: 18px;
   }
 }
-
 </style>
